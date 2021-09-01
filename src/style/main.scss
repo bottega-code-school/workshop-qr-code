@@ -3,7 +3,7 @@
   --primary: #129fc0;
   --off-white: #f6f6f6;
   --sans: "Montserrat", sans-serif;
-  --border-radius: 5px;
+  --border-radius: 21px;
   --shadow: 0 2px 15px 0 rgb(0 0 0 / 9%);
 }
 
@@ -35,7 +35,7 @@ body {
 .content {
   border-radius: 3px;
   box-shadow: var(--shadow);
-  width: 1200px;
+  width: 900px;
   padding: 21px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -48,29 +48,44 @@ body {
   display: grid;
   grid-template-columns: 300px 1fr;
   gap: 42px;
-  width: calc(1200px - 42px);
+  width: calc(900px - 42px);
 
   &__form {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
 
     input {
       padding: 8px 15px;
-      border-radius: 14px;
-      border: 1px solid var(--primary);
+      border-radius: var(--border-radius);
+      border: 2px solid var(--primary);
+      outline: none;
       width: 100%;
+      transition: 0.5s ease-in-out;
+      height: fit-content;
+
+      &:focus {
+        border: 2px solid var(--highlight);
+      }
     }
 
     button {
       padding: 8px 15px;
-      border-radius: 14px;
-      border: 1px solid var(--primary);
+      border-radius: var(--border-radius);
+      height: fit-content;
       width: fit-content;
+      border: 1px solid var(--primary);
       background-color: var(--primary);
       color: white;
       font-weight: 700;
       text-transform: uppercase;
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid var(--highlight);
+        background-color: var(--highlight);
+      }
     }
   }
 
@@ -78,5 +93,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 568px;
   }
 }
