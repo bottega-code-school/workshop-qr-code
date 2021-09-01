@@ -44,20 +44,39 @@ body {
   background-color: var(--off-white);
 }
 
-.list-container {
+.qr-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 300px 1fr;
+  gap: 42px;
+  width: calc(1200px - 42px);
 
-  &__item {
+  &__form {
     display: grid;
-    grid-template-columns: 100px 100px 300px 300px 150px;
+    grid-template-columns: 1fr;
     gap: 15px;
-    align-items: center;
 
-    .handle {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    input {
+      padding: 8px 15px;
+      border-radius: 14px;
+      border: 1px solid var(--primary);
+      width: 100%;
     }
+
+    button {
+      padding: 8px 15px;
+      border-radius: 14px;
+      border: 1px solid var(--primary);
+      width: fit-content;
+      background-color: var(--primary);
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  &__qr-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
